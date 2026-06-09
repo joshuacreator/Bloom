@@ -58,12 +58,12 @@ class _VerifyEmailScreenState extends ConsumerState<VerifyEmailScreen> {
           if (isVerified)
             AppButton(
               label: 'Verified',
-              onTap: () => context.go(AuthCheckerScreen.id),
+              onPressed: () => context.go(AuthCheckerScreen.id),
             ),
           if (!isVerified)
             AppButton(
               label: 'Cancel',
-              onTap: () async {
+              onPressed: () async {
                 await ref.read(authNotifierProvider.notifier).signOut();
               },
             ),

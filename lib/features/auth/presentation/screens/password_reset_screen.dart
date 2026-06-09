@@ -77,7 +77,7 @@ class _PasswordResetScreenState extends ConsumerState<PasswordResetScreen> {
                 const SizedBox(height: 40),
                 AppButton(
                   label: 'Proceed',
-                  onTap: _handleReset,
+                  onPressed: _handleReset,
                 ),
                 const SizedBox(height: 20),
                 TextButton(

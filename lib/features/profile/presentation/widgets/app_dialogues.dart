@@ -27,7 +27,7 @@ void linkAlertDialogue(
         actionsAlignment: MainAxisAlignment.end,
         actionsOverflowAlignment: OverflowBarAlignment.center,
         alignment: Alignment.bottomCenter,
-        insetPadding: EdgeInsets.all(ten),
+        insetPadding: EdgeInsets.all(10),
         content: Text.rich(
           TextSpan(
             text: 'Do you want to open ',
@@ -46,7 +46,7 @@ void linkAlertDialogue(
         ),
         actions: [
           AppButton(
-            onTap: () async {
+            onPressed: () async {
               context.pop();
               await launchUrl(link, mode: LaunchMode.inAppWebView).catchError(
                 (value) =>
@@ -81,9 +81,9 @@ void deleteMessageAlertDialogue(
         content: const Text('Delete message?\nThis can not be reversed'),
         actionsAlignment: MainAxisAlignment.spaceBetween,
         shape: RoundedRectangleBorder(
-          borderRadius: defaultBorderRadius,
+          borderRadius: BorderRadius.circular(10),
         ),
-        insetPadding: EdgeInsets.all(ten),
+        insetPadding: EdgeInsets.all(10),
         actions: [
           AppTextButton(
             label: 'Proceed',
@@ -128,7 +128,7 @@ void leaveRoomDialogue(
         actions: [
           AppButton(
             label: 'Cancel',
-            onTap: () {
+            onPressed: () {
               context.pop();
             },
           ),
@@ -165,9 +165,9 @@ void deleteRoomDialogue(
         ),
         actionsAlignment: MainAxisAlignment.spaceBetween,
         shape: RoundedRectangleBorder(
-          borderRadius: defaultBorderRadius,
+          borderRadius: BorderRadius.circular(10),
         ),
-        insetPadding: EdgeInsets.all(ten),
+        insetPadding: EdgeInsets.all(10),
         actions: [
           AppTextButton(
             label: 'Delete',
@@ -201,8 +201,8 @@ void deleteAccountDialogue(BuildContext context) {
           'You are about to delete your account. This cannot be reversed and your data will be lost forever.',
         ),
         actionsAlignment: MainAxisAlignment.spaceBetween,
-        shape: RoundedRectangleBorder(borderRadius: defaultBorderRadius),
-        insetPadding: EdgeInsets.all(ten),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+        insetPadding: EdgeInsets.all(10),
         actions: [
           AppTextButton(
             label: 'Delete',
@@ -239,11 +239,11 @@ void leaveSpaceDialogue(
         ),
         actionsAlignment: MainAxisAlignment.spaceBetween,
         actionsOverflowAlignment: OverflowBarAlignment.center,
-        insetPadding: EdgeInsets.all(ten),
+        insetPadding: EdgeInsets.all(10),
         actions: [
           AppButton(
             label: 'Cancel',
-            onTap: () {
+            onPressed: () {
               context.pop();
             },
           ),

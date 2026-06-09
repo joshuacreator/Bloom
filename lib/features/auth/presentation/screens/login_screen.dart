@@ -108,11 +108,11 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                   children: [
                     AppOutlinedButton(
                       label: 'Register',
-                      onTap: () => context.go(RegisterScreen.id),
+                      onPressed: () => context.go(RegisterScreen.id),
                     ),
                     AppButton(
                       label: 'Log In',
-                      onTap: isLoading ? null : _handleLogin,
+                      onPressed: isLoading ? null : _handleLogin,
                     ),
                   ],
                 ),

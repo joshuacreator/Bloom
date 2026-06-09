@@ -57,7 +57,7 @@ class _ReplyTileState extends ConsumerState<ReplyTile> {
     final textController = TextEditingController(text: widget.reply.message);
 
     return Padding(
-      padding: EdgeInsets.only(bottom: five),
+      padding: EdgeInsets.only(bottom: 5),
       child: GestureDetector(
         onTap: () {
           setState(() {
@@ -68,11 +68,11 @@ class _ReplyTileState extends ConsumerState<ReplyTile> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
-              padding: EdgeInsets.all(ten),
-              margin: EdgeInsets.symmetric(horizontal: ten),
+              padding: EdgeInsets.all(10),
+              margin: EdgeInsets.symmetric(horizontal: 10),
               decoration: BoxDecoration(
                 color: Colors.grey.shade300.withOpacity(0.5),
-                borderRadius: BorderRadius.circular(ten),
+                borderRadius: BorderRadius.circular(10),
               ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -92,30 +92,30 @@ class _ReplyTileState extends ConsumerState<ReplyTile> {
                           ),
                         ),
                         child: CircleAvatar(
-                          radius: size / 2,
+                          radius: 20,
                           backgroundImage: CachedNetworkImageProvider(
                             user.value?['image'],
                           ),
                         ),
                       ),
-                      SizedBox(width: ten),
+                      SizedBox(width: 10),
                       Text(
                         widget.reply.isMe
                             ? '${user.value?['name']} (You)'
                             : user.value?['name'] ?? '',
-                        style: TextConfig.small,
+                        style: AppTextStyles.small,
                       ),
                       widget.reply.pending
                           ? Icon(
                               Icons.access_time_rounded,
                               color: Colors.grey,
-                              size: size / 2.3,
+                              size: 17,
                             )
                           : const SizedBox(),
                     ],
                   ),
                   Padding(
-                    padding: EdgeInsets.only(left: forty + ten),
+                    padding: EdgeInsets.only(left: 40 + 10),
                     child: AppShowMoreText(text: widget.reply.message),
                   ),
                   Row(
@@ -127,9 +127,9 @@ class _ReplyTileState extends ConsumerState<ReplyTile> {
                             : widget.reply.likes.length == 1
                                 ? '1 like'
                                 : '${widget.reply.likes.length} likes',
-                        style: TextConfig.small,
+                        style: AppTextStyles.small,
                       ),
-                      Text(timeAgo(widget.reply.time), style: TextConfig.small),
+                      Text(timeAgo(widget.reply.time), style: AppTextStyles.small),
                     ],
                   ),
                 ],
@@ -145,7 +145,7 @@ class _ReplyTileState extends ConsumerState<ReplyTile> {
                         ? Icons.favorite
                         : Icons.favorite_border_outlined,
                     color: widget.reply.likes.contains(auth.uid)
-                        ? ColourConfig.danger
+                        ? AppColors.danger
                         : null,
                     tooltip: widget.reply.likes.contains(auth.uid)
                         ? 'Revoke like'
@@ -210,7 +210,7 @@ class _ReplyTileState extends ConsumerState<ReplyTile> {
     return IconButton(
       onPressed: onPressed,
       icon: Icon(icon),
-      iconSize: size / 2,
+      iconSize: 20,
       padding: EdgeInsets.zero,
       splashRadius: 1,
       color: color,

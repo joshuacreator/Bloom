@@ -53,12 +53,12 @@ class _MessageTileState extends ConsumerState<MessageTile> {
     final count = repliesCount.valueOrNull ?? 0;
 
     return Padding(
-      padding: EdgeInsets.all(five),
+      padding: EdgeInsets.all(5),
       child: InkWell(
         onTap: widget.onTap,
-        borderRadius: defaultBorderRadius,
+        borderRadius: AppConstants.defaultBorderRadius,
         child: Padding(
-          padding: EdgeInsets.all(ten),
+          padding: EdgeInsets.all(10),
           child: Column(
             crossAxisAlignment: widget.message.me
                 ? CrossAxisAlignment.end
@@ -81,35 +81,35 @@ class _MessageTileState extends ConsumerState<MessageTile> {
                       ),
                     ),
                     child: CircleAvatar(
-                      radius: size / 2,
+                      radius: 20,
                       backgroundImage: CachedNetworkImageProvider(
                         user.value?['image'] ?? '',
                       ),
                     ),
                   ),
-                  SizedBox(width: ten),
+                  SizedBox(width: 10),
                   Container(
-                    constraints: BoxConstraints(maxWidth: size * 3.5),
+                    constraints: BoxConstraints(maxWidth: 140),
                     child: Text(
                       widget.message.me ? '' : user.value?['name'] ?? '',
                       overflow: TextOverflow.ellipsis,
-                      style: TextConfig.intro,
+                      style: AppTextStyles.intro,
                     ),
                   ),
-                  SizedBox(width: ten),
+                  SizedBox(width: 10),
                   Text(
                     timeAgo(widget.message.time),
-                    style: TextConfig.intro.copyWith(fontSize: ten),
+                    style: AppTextStyles.intro.copyWith(fontSize: 10),
                   ),
-                  SizedBox(width: ten),
+                  SizedBox(width: 10),
                   widget.message.me && widget.message.pending
                       ? Icon(
                           Icons.access_time_rounded,
                           color: Colors.grey,
-                          size: size / 2.3,
+                          size: 17,
                         )
                       : const SizedBox(),
-                  SizedBox(width: ten),
+                  SizedBox(width: 10),
                 ],
               ),
               Visibility(
@@ -118,24 +118,24 @@ class _MessageTileState extends ConsumerState<MessageTile> {
                 child: widget.message.image != null &&
                         widget.message.image!.isNotEmpty
                     ? ClipRRect(
-                        borderRadius: defaultBorderRadius,
+                        borderRadius: AppConstants.defaultBorderRadius,
                         child: ConstrainedBox(
                           constraints: BoxConstraints(
-                            maxHeight: size * 4,
-                            maxWidth: size * 6,
+                            maxHeight: 160,
+                            maxWidth: 240,
                           ),
                           child: CachedNetworkImage(
                             imageUrl: widget.message.image!.isEmpty
-                                ? defaultRoomImgPath
+                                ? AppConstants.defaultRoomImgPath
                                 : widget.message.image!,
                             errorWidget: (context, url, error) => Icon(
                               Icons.image,
-                              size: size * 3,
+                              size: 120,
                             ),
                             progressIndicatorBuilder: (context, url, progress) {
                               return Center(
                                 child: Padding(
-                                  padding: EdgeInsets.all(five),
+                                  padding: EdgeInsets.all(5),
                                   child: CircularProgressIndicator(
                                     value: progress.progress,
                                     strokeCap: StrokeCap.round,
@@ -155,7 +155,7 @@ class _MessageTileState extends ConsumerState<MessageTile> {
               widget.message.message.isEmpty
                   ? const SizedBox()
                   : ConstrainedBox(
-                      constraints: BoxConstraints(maxWidth: size * 9),
+                      constraints: BoxConstraints(maxWidth: 360),
                       child: Text.rich(
                         maxLines: 5,
                         overflow: TextOverflow.ellipsis,
@@ -164,12 +164,12 @@ class _MessageTileState extends ConsumerState<MessageTile> {
                         ),
                       ),
                     ),
-              height5,
+              const SizedBox(height: 5),
               Visibility(
                 visible: count > 0,
                 child: Text(
                   'Replies ($count)',
-                  style: TextConfig.sub,
+                  style: AppTextStyles.sub,
                 ),
               ),
             ],

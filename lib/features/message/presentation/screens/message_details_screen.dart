@@ -13,7 +13,6 @@ import '../../../../core/utils/connection_state.dart';
 import '../../../../views/dialogues/app_dialogues.dart';
 import '../../../../views/dialogues/info_edit_dialogue.dart';
 import '../../../../common/widgets/loading_indicator.dart';
-import '../../../../common/widgets/loading_indicator.dart';
 import '../../../../common/widgets/snack_bar.dart';
 import '../../../../common/widgets/seperator.dart';
 import '../../domain/entities/message_entity.dart';
@@ -75,7 +74,7 @@ class _MessageDetailsScreenState extends ConsumerState<MessageDetailsScreen> {
     final me = auth?.uid == widget.message.senderId || auth?.uid == null;
 
     final dateTime = DateFormat('dd MMM hh:mm a').format(widget.message.time);
-    final bottom = MediaQuery.viewInsetsOf(context).bottom + forty + ten;
+    final bottom = MediaQuery.viewInsetsOf(context).bottom + 40 + 10;
 
     return Scaffold(
       appBar: AppBar(
@@ -120,20 +119,19 @@ class _MessageDetailsScreenState extends ConsumerState<MessageDetailsScreen> {
                   auth: auth,
                   msg: msg,
                 ),
-                height10,
+                const SizedBox(height: 10),
                 Row(
                   children: [
                     Padding(
-                      padding: EdgeInsets.only(left: ten),
+                      padding: EdgeInsets.only(left: 10),
                       child: Text(
                         'Replies (${data.length})',
-                        style: TextConfig.intro,
+                        style: AppTextStyles.intro,
                       ),
                     ),
-                  ],
-                ),
-                height10,
-                ListView.builder(
+                  ]),
+                  const SizedBox(height: 10),
+                  ListView.builder(
                   shrinkWrap: true,
                   physics: const NeverScrollableScrollPhysics(),
                   itemCount: data.length,
@@ -218,7 +216,7 @@ class _ReactionTile extends ConsumerWidget {
     return Column(
       children: [
         const Separator(height: 0),
-        height5,
+        const SizedBox(height: 5),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
@@ -232,7 +230,7 @@ class _ReactionTile extends ConsumerWidget {
                   ? Icons.thumb_up
                   : Icons.thumb_up_outlined,
               colour: auth?.uid != null && likes.contains(auth!.uid)
-                  ? ColourConfig.go
+                    ? AppColors.go
                   : null,
               onPressed: () async {
                 final isConnected = await isOnline();
@@ -321,10 +319,10 @@ class _ReactionTile extends ConsumerWidget {
                     }
                   : null,
             ),
-          ],
-        ),
-        height10,
-        const Separator(height: 0),
+            ],
+          ),
+          const SizedBox(height: 10),
+          const Separator(height: 0),
       ],
     );
   }
@@ -344,7 +342,7 @@ class _MsgTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(ten),
+      padding: EdgeInsets.all(10),
       child: Row(
         children: [
           Expanded(
@@ -358,29 +356,29 @@ class _MsgTile extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         CircleAvatar(
-                          radius: size / 2,
+                          radius: 20,
                           backgroundImage: CachedNetworkImageProvider(
-                            defaultRoomImgPath,
+                            AppConstants.defaultRoomImgPath,
                           ),
                         ),
-                        SizedBox(width: ten),
+                        SizedBox(width: 10),
                         Text(
                           me ? '(You)' : message.senderId,
-                          style: TextConfig.small,
+                          style: AppTextStyles.small,
                         ),
                       ],
                     ),
-                    Text(date, style: TextConfig.intro),
-                  ],
-                ),
-                height10,
-                Visibility(
+                    Text(date, style: AppTextStyles.intro),
+                    ],
+                    ),
+                    const SizedBox(height: 10),
+                    Visibility(
                   visible:
                       message.image != null && message.image!.isNotEmpty,
                   child: message.image != null &&
                           message.image!.isNotEmpty
                       ? ClipRRect(
-                          borderRadius: defaultBorderRadius,
+                          borderRadius: AppConstants.defaultBorderRadius,
                           child: CachedNetworkImage(
                             imageUrl: message.image!,
                             progressIndicatorBuilder:
@@ -396,7 +394,7 @@ class _MsgTile extends StatelessWidget {
                         )
                       : const SizedBox(),
                 ),
-                height10,
+                const SizedBox(height: 10),
                 Text.rich(
                   TextSpan(
                     children: extractText(
@@ -432,11 +430,11 @@ class _ReactionButton extends StatelessWidget {
     return Column(
       children: [
         IconButton(
-          padding: EdgeInsets.all(ten),
+          padding: EdgeInsets.all(10),
           onPressed: onPressed,
           icon: Icon(icon, color: colour),
         ),
-        Text(label, style: TextConfig.sub),
+        Text(label, style: AppTextStyles.sub),
       ],
     );
   }

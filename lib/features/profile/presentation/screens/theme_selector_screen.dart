@@ -19,12 +19,12 @@ class ThemeSelectorScreen extends ConsumerWidget {
       appBar: AppBar(title: const Text('Change app theme')),
       body: ListView.separated(
         itemCount: ThemeMode.values.length,
-        padding: EdgeInsets.all(ten),
-        separatorBuilder: (context, index) => height10,
+        padding: EdgeInsets.all(10),
+        separatorBuilder: (context, index) => const SizedBox(height: 10),
         itemBuilder: (_, index) {
           final themeMode = ThemeMode.values[index];
           return RadioListTile(
-            shape: RoundedRectangleBorder(borderRadius: defaultBorderRadius),
+            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
             value: themeMode,
             groupValue: currentTheme,
             onChanged: (newTheme) => themeNotifier.setTheme(newTheme!),

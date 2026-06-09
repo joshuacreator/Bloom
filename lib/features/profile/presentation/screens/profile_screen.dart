@@ -21,6 +21,7 @@ import '../../../../common/widgets/snack_bar.dart';
 import '../../../../common/widgets/app_circle_avatar.dart';
 import '../../../../common/widgets/app_text_field.dart';
 import '../../../../common/widgets/app_button.dart';
+import '../../../../core/theme/app_text_styles.dart';
 import '../widgets/info_edit_dialogue.dart';
 
 class ProfileScreen extends ConsumerStatefulWidget {
@@ -52,10 +53,10 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
       appBar: AppBar(title: const Text('Profile')),
       body: ListView(
         padding: EdgeInsets.only(
-          top: ten,
-          bottom: ten,
-          left: ten,
-          right: ten,
+          top: 10,
+          bottom: 10,
+          left: 10,
+          right: 10,
         ),
         children: [
           GestureDetector(
@@ -123,15 +124,15 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
                           : CachedNetworkImageProvider(
                               user.value!['image'] ?? '',
                             ),
-                      userId: user.value?['id'],
+                      isActive: user.value?['active'] ?? false,
                     )
                   : AppCircleAvatar(
                       image: FileImage(File(fileImage!)),
-                      userId: user.value?['id'],
+                      isActive: user.value?['active'] ?? false,
                     ),
             ),
           ),
-          height40,
+          const SizedBox(height: 40),
           UserInfoTile(
             leading: Icons.person_outline,
             title: user.value?['name'] ?? 'Tap to edit',
@@ -151,7 +152,7 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
               );
             },
           ),
-          height5,
+          const SizedBox(height: 5),
           UserInfoTile(
             leading: Icons.info_outline_rounded,
             title: user.value?['about'] ?? 'Tap to edit',
@@ -171,7 +172,7 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
               );
             },
           ),
-          height5,
+          const SizedBox(height: 5),
           UserInfoTile(
             leading: Icons.phone,
             title: '${user.value?['phone'] ?? 'Tap to edit'}',
@@ -269,12 +270,12 @@ class UserInfoTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      shape: RoundedRectangleBorder(borderRadius: defaultBorderRadius),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
       leading: Icon(leading),
       title: Text(title),
       subtitle: Text(
         subtitle,
-        style: TextConfig.intro,
+        style: AppTextStyles.intro,
       ),
       trailing: const Icon(Icons.edit_outlined),
       onTap: onTap,

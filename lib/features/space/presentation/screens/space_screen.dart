@@ -62,7 +62,6 @@ class SpaceScreen extends ConsumerWidget {
                     final dateTime =
                         DateFormat('dd MMM hh:mm a').format(space.createdAt);
                     return SpaceTile(
-                      id: space.id!,
                       title: space.name,
                       subtitle: 'Created $dateTime',
                       image: space.image ?? '',

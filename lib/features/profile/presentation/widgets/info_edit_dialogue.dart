@@ -23,13 +23,13 @@ void userInfoEditDialogue(
     builder: (context) {
       double bottom = MediaQuery.viewInsetsOf(context).bottom;
       return Padding(
-        padding: EdgeInsets.fromLTRB(ten, ten, ten, bottom),
+        padding: EdgeInsets.fromLTRB(10, 10, 10, bottom),
         child: Form(
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              Row(children: [Text('Edit your info', style: TextConfig.intro)]),
-              height10,
+              Row(children: [Text('Edit your info', style: AppTextStyles.intro)]),
+              const SizedBox(height: 10),
               AppTextField(
                 hintText: 'Name',
                 borderless: true,
@@ -37,7 +37,7 @@ void userInfoEditDialogue(
                 autofocus: autofocusName,
                 controller: nameController,
               ),
-              height10,
+              const SizedBox(height: 10),
               AppTextField(
                 hintText: 'about',
                 borderless: true,
@@ -47,7 +47,7 @@ void userInfoEditDialogue(
                 keyboardType: TextInputType.multiline,
                 textInputAction: TextInputAction.newline,
               ),
-              height10,
+              const SizedBox(height: 10),
               AppTextField(
                 hintText: 'Phone',
                 borderless: true,
@@ -55,8 +55,8 @@ void userInfoEditDialogue(
                 textInputAction: TextInputAction.done,
                 controller: phoneController,
               ),
-              height30,
-              AppButton(label: 'Save', onTap: onSaved),
+              const SizedBox(height: 30),
+              AppButton(label: 'Save', onPressed: onSaved),
             ],
           ),
         ),
@@ -104,7 +104,7 @@ void infoEditDialogue(
       text();
       double bottom = MediaQuery.viewInsetsOf(context).bottom;
       return Padding(
-        padding: EdgeInsets.fromLTRB(ten, ten, ten, bottom),
+        padding: EdgeInsets.fromLTRB(10, 10, 10, bottom),
         child: Form(
           child: Column(
             mainAxisSize: MainAxisSize.min,
@@ -112,10 +112,10 @@ void infoEditDialogue(
               Row(children: [
                 Text(
                   title ?? defaultTitle,
-                  style: TextConfig.intro,
+                  style: AppTextStyles.intro,
                 ),
               ]),
-              height10,
+              const SizedBox(height: 10),
               Visibility(
                 visible: showName,
                 child: Column(
@@ -131,7 +131,7 @@ void infoEditDialogue(
                       onFieldSubmitted:
                           showAbout ? null : (_) => onSaved!(),
                     ),
-                    height10,
+                    const SizedBox(height: 10),
                   ],
                 ),
               ),
@@ -147,9 +147,9 @@ void infoEditDialogue(
                   textInputAction: TextInputAction.newline,
                 ),
               ),
-              height30,
-              AppButton(label: 'Save', onTap: onSaved),
-              height10,
+              const SizedBox(height: 30),
+              AppButton(label: 'Save', onPressed: onSaved),
+              const SizedBox(height: 10),
             ],
           ),
         ),

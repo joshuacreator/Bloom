@@ -35,7 +35,11 @@ class SettingsScreen extends ConsumerWidget {
           Expanded(
             child: ListView(
               children: [
-                ProfileTile(user: user, email: email),
+                ProfileTile(
+                  name: user.value?['name'] ?? '',
+                  email: email ?? '',
+                  imageUrl: user.value?['image'] ?? '',
+                ),
                 const Separator(),
                 SettingTile(
                   title: user.value?['active'] == true
@@ -81,7 +85,7 @@ class SettingsScreen extends ConsumerWidget {
             ),
           ),
           Padding(
-            padding: EdgeInsets.only(bottom: ten),
+            padding: EdgeInsets.only(bottom: 10),
             child: AppTextButtonIcon(
               label: 'Log out',
               icon: Icons.logout_rounded,

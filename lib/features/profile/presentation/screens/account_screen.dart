@@ -14,7 +14,7 @@ class AccountScreen extends ConsumerWidget {
     return Scaffold(
       appBar: AppBar(title: const Text('Account')),
       body: ListView(
-        padding: EdgeInsets.only(top: ten),
+        padding: EdgeInsets.only(top: 10),
         children: [
           ListTile(
             leading: const Icon(Icons.delete_forever_outlined),

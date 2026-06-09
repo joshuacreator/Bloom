@@ -12,8 +12,8 @@ import '../../domain/entities/space_entity.dart';
 import '../notifiers/space_notifier.dart';
 import '../providers/space_providers.dart';
 import '../../../../core/constants/app_constants.dart';
+import '../../../../models/room.dart';
 import '../../../../models/space.dart' as old;
-import '../../../../features/room/domain/entities/room_entity.dart';
 import '../../../../providers/auth_provider.dart';
 import '../../../../providers/room/room_data_providers.dart';
 import '../../../../services/room_db.dart';
@@ -196,7 +196,7 @@ class _SpaceInfoScreenState extends ConsumerState<SpaceInfoScreen> {
                             name: room.value?[index]['name'] ?? '',
                             desc: room.value?[index]['desc'] ?? '',
                             private: room.value?[index]['private'] ?? true,
-                            image: room.value?[index]['image'] ?? defaultRoomImgPath,
+                            image: room.value?[index]['image'] ?? AppConstants.defaultRoomImgPath,
                             createdAt: (room.value?[index]['createdAt'] as Timestamp?)?.toDate(),
                             participants: room.value?[index]['participants'] ?? [],
                           );
@@ -213,7 +213,7 @@ class _SpaceInfoScreenState extends ConsumerState<SpaceInfoScreen> {
                                 : isRoomParticipant
                                     ? AppTextButton(
                                         label: 'Leave',
-                                        colour: AppColors.danger,
+                                        color: AppColors.danger,
                                         onPressed: () {
                                           leaveRoomDialogue(
                                             context,
@@ -226,7 +226,7 @@ class _SpaceInfoScreenState extends ConsumerState<SpaceInfoScreen> {
                                       )
                                     : AppTextButton(
                                         label: 'Join',
-                                        colour: AppColors.go,
+                                        color: AppColors.go,
                                         onPressed: () {
                                           RoomDB().join(
                                             context,

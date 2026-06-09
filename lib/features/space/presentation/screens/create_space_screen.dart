@@ -138,7 +138,7 @@ class _CreateSpaceScreenState extends ConsumerState<CreateSpaceScreen> {
                     const SizedBox(height: 30),
                     AppButton(
                       label: 'Create',
-                      onTap: () async {
+                      onPressed: () async {
                         final isConnected = await isOnline();
                         if (!isConnected) {
                           if (context.mounted) {
