@@ -9,14 +9,14 @@ import 'package:image_picker/image_picker.dart';
 import '../../domain/entities/space_entity.dart';
 import '../notifiers/space_notifier.dart';
 import '../providers/space_providers.dart';
-import '../../../../views/widgets/app_text_field.dart';
-import '../../../../views/widgets/app_text_buttons.dart';
+import '../../../../common/widgets/app_text_field.dart';
+import '../../../../common/widgets/app_text_buttons.dart';
 import '../../../../views/dialogues/bottom_sheets.dart';
-import '../../../../views/dialogues/snack_bar.dart';
-import '../../../../views/dialogues/loading_indicator_build.dart';
+import '../../../../common/widgets/snack_bar.dart';
+import '../../../../common/widgets/loading_indicator.dart';
 import '../../../../core/theme/app_colors.dart';
-import '../../../../services/connection_state.dart';
-import '../../../../services/image_helper.dart';
+import '../../../../core/utils/connection_state.dart';
+import '../../../../core/utils/image_helper.dart';
 
 class SpaceSettingsScreen extends ConsumerStatefulWidget {
   static String id = 'space-settings';

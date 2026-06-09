@@ -3,9 +3,9 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../../providers/auth_provider.dart';
-import '../../../../services/connection_state.dart';
-import '../../../../views/dialogues/loading_indicator.dart';
-import '../../../../views/dialogues/snack_bar.dart';
+import '../../../../core/utils/connection_state.dart';
+import '../../../../common/widgets/loading_indicator.dart';
+import '../../../../common/widgets/snack_bar.dart';
 import '../../domain/entities/course_entity.dart';
 import '../providers/academics_providers.dart';
 import '../widgets/add_course_dialogue.dart';

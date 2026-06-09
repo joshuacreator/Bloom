@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-import '../../../../configs/consts.dart';
-import '../../../../configs/text_config.dart';
-import '../../../../views/widgets/app_button.dart';
-import '../../../../views/widgets/app_text_field.dart';
+import '../../../../core/constants/app_constants.dart';
+import '../../../../core/theme/app_text_styles.dart';
+import '../../../../common/widgets/app_button.dart';
+import '../../../../common/widgets/app_text_field.dart';
 
 void userInfoEditDialogue(
   BuildContext context, {

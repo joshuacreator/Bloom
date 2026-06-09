@@ -3,16 +3,16 @@ import 'package:flutter/services.dart';
 import 'package:go_router/go_router.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import '../../../../configs/consts.dart';
+import '../../../../core/constants/app_constants.dart';
 import '../../../../models/space.dart';
 import '../../../../services/auth.dart';
 import '../../../../services/room_db.dart';
 import '../../../../services/space_db.dart';
-import '../../../../views/dialogues/loading_indicator_build.dart';
-import '../../../../views/dialogues/snack_bar.dart';
-import '../../../../views/widgets/app_button.dart';
-import '../../../../views/widgets/app_text_buttons.dart';
-import '../../../../views/widgets/b_nav_bar.dart';
+import '../../../../common/widgets/loading_indicator.dart';
+import '../../../../common/widgets/snack_bar.dart';
+import '../../../../common/widgets/app_button.dart';
+import '../../../../common/widgets/app_text_buttons.dart';
+import '../../../../common/widgets/b_nav_bar.dart';
 
 void linkAlertDialogue(
   BuildContext context, {

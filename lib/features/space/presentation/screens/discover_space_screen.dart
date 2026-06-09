@@ -6,15 +6,15 @@ import '../../domain/entities/space_entity.dart';
 import '../notifiers/space_notifier.dart';
 import '../providers/space_providers.dart';
 import '../../../../providers/auth_provider.dart';
-import '../../../../views/widgets/space_card.dart';
-import '../../../../views/widgets/b_nav_bar.dart';
-import '../../../../views/dialogues/loading_indicator.dart';
-import '../../../../views/dialogues/snack_bar.dart';
+import '../../../../common/widgets/space_card.dart';
+import '../../../../common/widgets/b_nav_bar.dart';
+import '../../../../common/widgets/loading_indicator.dart';
+import '../../../../common/widgets/snack_bar.dart';
 import '../../../../views/screens/search_screen.dart';
 import '../../../../views/screens/space/space_info_screen.dart' as old;
 import '../../../../views/screens/room/room_chats_screen.dart';
 import '../../../../core/theme/app_colors.dart';
-import '../../../../services/connection_state.dart';
+import '../../../../core/utils/connection_state.dart';
 
 class DiscoverSpacesScreen extends ConsumerWidget {
   static String id = 'discover-spaces';

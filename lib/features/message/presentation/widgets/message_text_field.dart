@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../configs/consts.dart';
+import '../../../../core/constants/app_constants.dart';
 
 class MessageTextField extends StatelessWidget {
   const MessageTextField({

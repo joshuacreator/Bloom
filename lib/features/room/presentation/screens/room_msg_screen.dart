@@ -15,7 +15,7 @@ import '../../../../core/theme/app_colors.dart';
 import '../../../../core/utils/extensions.dart';
 import '../../../../models/message.dart';
 import '../../../../services/message_db.dart';
-import '../../../../services/image_helper.dart';
+import '../../../../core/utils/image_helper.dart';
 import '../../domain/entities/room_entity.dart';
 
 class RoomMsgScreen extends ConsumerStatefulWidget {

@@ -8,19 +8,19 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:image_picker/image_picker.dart';
 
-import '../../../../configs/consts.dart';
-import '../../../../configs/text_config.dart';
+import '../../../../core/constants/app_constants.dart';
+import '../../../../core/theme/app_text_styles.dart';
 import '../../../../providers/auth_provider.dart';
 import '../../../../providers/firestore_provider.dart';
 import '../../../../providers/users_providers.dart';
-import '../../../../services/connection_state.dart';
-import '../../../../services/image_helper.dart';
+import '../../../../core/utils/connection_state.dart';
+import '../../../../core/utils/image_helper.dart';
 import '../../../../views/dialogues/bottom_sheets.dart';
-import '../../../../views/dialogues/loading_indicator_build.dart';
-import '../../../../views/dialogues/snack_bar.dart';
-import '../../../../views/widgets/app_circle_avatar.dart';
-import '../../../../views/widgets/app_text_field.dart';
-import '../../../../views/widgets/app_button.dart';
+import '../../../../common/widgets/loading_indicator.dart';
+import '../../../../common/widgets/snack_bar.dart';
+import '../../../../common/widgets/app_circle_avatar.dart';
+import '../../../../common/widgets/app_text_field.dart';
+import '../../../../common/widgets/app_button.dart';
 import '../widgets/info_edit_dialogue.dart';
 
 class ProfileScreen extends ConsumerStatefulWidget {

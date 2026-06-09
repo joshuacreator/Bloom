@@ -2,18 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../../../configs/consts.dart';
+import '../../../../core/constants/app_constants.dart';
 import '../../../../providers/auth_provider.dart';
 import '../../../../providers/firestore_provider.dart';
 import '../../../../providers/users_providers.dart';
 import '../../../../services/auth.dart';
-import '../../../../services/connection_state.dart';
-import '../../../../views/dialogues/snack_bar.dart';
-import '../../../../views/widgets/app_text_buttons.dart';
-import '../../../../views/widgets/b_nav_bar.dart';
-import '../../../../views/widgets/profile_tile.dart';
-import '../../../../views/widgets/seperator.dart';
-import '../../../../views/widgets/settings_tile.dart';
+import '../../../../core/utils/connection_state.dart';
+import '../../../../common/widgets/snack_bar.dart';
+import '../../../../common/widgets/app_text_buttons.dart';
+import '../../../../common/widgets/b_nav_bar.dart';
+import '../../../../common/widgets/profile_tile.dart';
+import '../../../../common/widgets/seperator.dart';
+import '../../../../common/widgets/settings_tile.dart';
 import '../screens/account_screen.dart';
 import '../screens/theme_selector_screen.dart';
 

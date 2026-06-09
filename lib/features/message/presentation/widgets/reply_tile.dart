@@ -3,24 +3,24 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../../../configs/colour_config.dart';
-import '../../../../configs/consts.dart';
-import '../../../../configs/text_config.dart';
+import '../../../../core/theme/app_colors.dart';
+import '../../../../core/constants/app_constants.dart';
+import '../../../../core/theme/app_text_styles.dart';
 import '../../../../providers/auth_provider.dart';
 import '../../../../providers/users_providers.dart';
-import '../../../../services/connection_state.dart';
-import '../../../../services/date_time_formatter.dart';
+import '../../../../core/utils/connection_state.dart';
+import '../../../../core/utils/date_time_utils.dart';
 import '../../../../views/dialogues/info_edit_dialogue.dart';
-import '../../../../views/dialogues/loading_indicator_build.dart';
-import '../../../../views/dialogues/snack_bar.dart';
+import '../../../../common/widgets/loading_indicator.dart';
+import '../../../../common/widgets/snack_bar.dart';
 import '../../../../views/screens/room/room_chats_screen.dart';
 import '../../../../views/screens/room/room_info_screen.dart';
 import '../../../../views/screens/room/room_msg_screen.dart';
 import '../../../../views/screens/user_screen.dart';
-import '../../../../views/widgets/app_text_buttons.dart';
-import '../../../../views/widgets/b_nav_bar.dart';
-import '../../../../views/widgets/image_viewer.dart';
-import '../../../../views/widgets/show_more_text.dart';
+import '../../../../common/widgets/app_text_buttons.dart';
+import '../../../../common/widgets/b_nav_bar.dart';
+import '../../../../common/widgets/image_viewer.dart';
+import '../../../../common/widgets/show_more_text.dart';
 import '../../domain/entities/reply_entity.dart';
 
 class ReplyTile extends ConsumerStatefulWidget {

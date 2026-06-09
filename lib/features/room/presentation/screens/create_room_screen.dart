@@ -12,7 +12,7 @@ import '../../../../common/widgets/snack_bar.dart';
 import '../../../../core/constants/app_constants.dart';
 import '../../../../core/utils/extensions.dart';
 import '../../../../providers/auth_provider.dart';
-import '../../../../services/image_helper.dart';
+import '../../../../core/utils/image_helper.dart';
 import '../../domain/entities/room_entity.dart';
 import '../providers/room_providers.dart';
 

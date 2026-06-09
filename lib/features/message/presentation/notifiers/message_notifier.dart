@@ -1,7 +1,7 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../../core/exceptions/app_exceptions.dart';
-import '../../../../services/connection_state.dart';
+import '../../../../core/utils/connection_state.dart';
 import '../../domain/entities/message_entity.dart';
 import '../../domain/entities/reply_entity.dart';
 import '../../domain/usecases/delete_message_use_case.dart';

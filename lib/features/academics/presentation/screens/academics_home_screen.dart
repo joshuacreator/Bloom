@@ -7,7 +7,7 @@ import 'package:intl/intl.dart';
 import '../../../../core/constants/app_constants.dart';
 import '../../../../providers/auth_provider.dart';
 import '../../../../providers/users_providers.dart';
-import '../../../../views/widgets/b_nav_bar.dart';
+import '../../../../common/widgets/b_nav_bar.dart';
 import '../widgets/activity_card.dart';
 import '../widgets/profile_card.dart';
 import 'courses_screen.dart';

@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../../../views/widgets/app_button.dart';
+import '../../../../common/widgets/app_button.dart';
 import '../providers/auth_provider.dart';
 import 'auth_checker_screen.dart';
 

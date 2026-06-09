@@ -4,17 +4,17 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../../../configs/consts.dart';
-import '../../../../configs/text_config.dart';
+import '../../../../core/constants/app_constants.dart';
+import '../../../../core/theme/app_text_styles.dart';
 import '../../../../providers/users_providers.dart';
-import '../../../../services/date_time_formatter.dart';
+import '../../../../core/utils/date_time_utils.dart';
 import '../../../../views/dialogues/app_dialogues.dart';
 import '../../../../views/screens/room/room_chats_screen.dart';
 import '../../../../views/screens/room/room_info_screen.dart';
 import '../../../../views/screens/room/room_msg_screen.dart';
 import '../../../../views/screens/user_screen.dart';
-import '../../../../views/widgets/b_nav_bar.dart';
-import '../../../../views/widgets/image_viewer.dart';
+import '../../../../common/widgets/b_nav_bar.dart';
+import '../../../../common/widgets/image_viewer.dart';
 import '../../domain/entities/message_entity.dart';
 import '../providers/message_providers.dart';
 

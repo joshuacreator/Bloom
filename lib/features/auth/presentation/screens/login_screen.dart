@@ -4,10 +4,10 @@ import 'package:go_router/go_router.dart';
 
 import '../../../../core/exceptions/app_exceptions.dart';
 import '../../../../core/exceptions/error_mapper.dart';
-import '../../../../views/dialogues/snack_bar.dart';
-import '../../../../views/widgets/app_button.dart';
-import '../../../../views/widgets/app_text_buttons.dart';
-import '../../../../views/widgets/app_text_field.dart';
+import '../../../../common/widgets/snack_bar.dart';
+import '../../../../common/widgets/app_button.dart';
+import '../../../../common/widgets/app_text_buttons.dart';
+import '../../../../common/widgets/app_text_field.dart';
 import '../providers/auth_provider.dart';
 import 'auth_checker_screen.dart';
 import 'password_reset_screen.dart';

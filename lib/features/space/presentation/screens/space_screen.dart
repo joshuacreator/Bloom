@@ -8,10 +8,10 @@ import '../providers/space_providers.dart';
 import 'discover_space_screen.dart';
 import 'create_space_screen.dart';
 import '../../../../providers/auth_provider.dart';
-import '../../../../views/widgets/space_tile.dart';
-import '../../../../views/widgets/seperator.dart';
-import '../../../../views/widgets/b_nav_bar.dart';
-import '../../../../views/dialogues/loading_indicator.dart';
+import '../../../../common/widgets/space_tile.dart';
+import '../../../../common/widgets/seperator.dart';
+import '../../../../common/widgets/b_nav_bar.dart';
+import '../../../../common/widgets/loading_indicator.dart';
 
 class SpaceScreen extends ConsumerWidget {
   const SpaceScreen({super.key});

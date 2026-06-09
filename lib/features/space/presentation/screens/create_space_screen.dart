@@ -8,14 +8,14 @@ import 'package:image_picker/image_picker.dart';
 import '../../domain/entities/space_entity.dart';
 import '../notifiers/space_notifier.dart';
 import '../../../../providers/auth_provider.dart';
-import '../../../../views/widgets/app_button.dart';
-import '../../../../views/widgets/app_text_field.dart';
-import '../../../../views/widgets/privacy_tile.dart';
+import '../../../../common/widgets/app_button.dart';
+import '../../../../common/widgets/app_text_field.dart';
+import '../../../../common/widgets/privacy_tile.dart';
 import '../../../../views/dialogues/bottom_sheets.dart';
-import '../../../../views/dialogues/snack_bar.dart';
+import '../../../../common/widgets/snack_bar.dart';
 import '../../../../core/theme/app_colors.dart';
-import '../../../../services/connection_state.dart';
-import '../../../../services/image_helper.dart';
+import '../../../../core/utils/connection_state.dart';
+import '../../../../core/utils/image_helper.dart';
 
 class CreateSpaceScreen extends ConsumerStatefulWidget {
   static String id = 'create-space';

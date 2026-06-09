@@ -3,8 +3,8 @@ import 'package:gap/gap.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../../common/widgets/app_text_buttons.dart';
-import '../../../../services/connection_state.dart';
-import '../../../../views/dialogues/snack_bar.dart';
+import '../../../../core/utils/connection_state.dart';
+import '../../../../common/widgets/snack_bar.dart';
 import '../widgets/course_info_tile.dart';
 
 class CourseDetailsDialogue extends StatelessWidget {

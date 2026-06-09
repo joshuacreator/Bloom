@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../../../../views/dialogues/loading_indicator.dart';
-import '../../../../views/widgets/b_nav_bar.dart';
+import '../../../../common/widgets/loading_indicator.dart';
+import '../../../../common/widgets/b_nav_bar.dart';
 import '../providers/auth_provider.dart';
 import 'login_screen.dart';
 import 'verify_email_screen.dart';
