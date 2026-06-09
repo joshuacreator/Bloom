@@ -3,7 +3,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:intl/intl.dart';
 
-import '../../domain/entities/space_entity.dart';
 import '../providers/space_providers.dart';
 import 'discover_space_screen.dart';
 import 'create_space_screen.dart';

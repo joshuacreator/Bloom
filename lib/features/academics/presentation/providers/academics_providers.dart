@@ -1,7 +1,5 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../../../../providers/auth_provider.dart';
 import '../../../../providers/firestore_provider.dart';
 import '../../domain/entities/course_entity.dart';
 import '../../domain/repositories/academics_repo.dart';

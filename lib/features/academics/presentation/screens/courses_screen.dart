@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../../../providers/auth_provider.dart';
 import '../../../../core/utils/connection_state.dart';
 import '../../../../common/widgets/loading_indicator.dart';
 import '../../../../common/widgets/snack_bar.dart';
@@ -26,7 +25,6 @@ class CoursesScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final courses = ref.watch(academicsNotifierProvider);
-    final userId = ref.watch(authStateProvider).value?.uid;
     return Scaffold(
       appBar: AppBar(
         title: const Text('Courses'),

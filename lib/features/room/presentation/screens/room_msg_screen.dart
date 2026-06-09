@@ -1,17 +1,12 @@
 import 'dart:io';
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:go_router/go_router.dart';
 import 'package:image_picker/image_picker.dart';
 
 import '../../../../common/widgets/loading_indicator.dart';
-import '../../../../common/widgets/snack_bar.dart';
 import '../../../../config/firebase_providers.dart';
 import '../../../../providers/auth_provider.dart';
-import '../../../../core/constants/app_constants.dart';
-import '../../../../core/theme/app_colors.dart';
 import '../../../../core/utils/extensions.dart';
 import '../../../../models/message.dart';
 import '../../../../services/message_db.dart';
@@ -36,7 +31,6 @@ class RoomMsgScreen extends ConsumerStatefulWidget {
 
 class _RoomMsgScreenState extends ConsumerState<RoomMsgScreen> {
   final _messageController = TextEditingController();
-  final _formKey = GlobalKey<FormState>();
   final _imageHelper = ImageHelper();
   String? _fileImage;
 
@@ -171,7 +165,7 @@ class _RoomMsgScreenState extends ConsumerState<RoomMsgScreen> {
                   final msgDb = MessageDB();
                   await msgDb.send(
                     Message(
-                      senderId: senderId ?? '',
+                      senderId: senderId,
                       message: _messageController.text.trim(),
                       image: _fileImage,
                       time: DateTime.now(),

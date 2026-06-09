@@ -69,7 +69,6 @@ class _RoomInfoScreenState extends ConsumerState<RoomInfoScreen> {
     final creator = ref.watch(anyUserProvider(widget.room.creatorId));
 
     final roomParams = (spaceId: widget.spaceId, roomId: widget.room.id!);
-    final roomAsync = ref.watch(observeRoomProvider(roomParams));
     final participantsAsync =
         ref.watch(observeParticipantsProvider(roomParams));
 

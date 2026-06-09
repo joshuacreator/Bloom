@@ -4,15 +4,11 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../../core/theme/app_colors.dart';
-import '../../../../core/constants/app_constants.dart';
 import '../../../../core/theme/app_text_styles.dart';
 import '../../../../providers/auth_provider.dart';
 import '../../../../providers/users_providers.dart';
-import '../../../../core/utils/connection_state.dart';
 import '../../../../core/utils/date_time_utils.dart';
 import '../../../../views/dialogues/info_edit_dialogue.dart';
-import '../../../../common/widgets/loading_indicator.dart';
-import '../../../../common/widgets/snack_bar.dart';
 import '../../../../views/screens/room/room_chats_screen.dart';
 import '../../../../views/screens/room/room_info_screen.dart';
 import '../../../../views/screens/room/room_msg_screen.dart';

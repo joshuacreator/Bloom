@@ -4,11 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../../common/widgets/loading_indicator.dart';
-import '../../../../common/widgets/snack_bar.dart';
 import '../../../../core/constants/app_constants.dart';
-import '../../../../core/theme/app_colors.dart';
-import '../../../../core/theme/app_text_styles.dart';
-import '../../../../core/utils/extensions.dart';
 import '../../../auth/presentation/providers/auth_provider.dart';
 import '../../../message/presentation/providers/message_providers.dart';
 import '../../domain/entities/room_entity.dart';

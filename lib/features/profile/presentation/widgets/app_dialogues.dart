@@ -3,7 +3,6 @@ import 'package:flutter/services.dart';
 import 'package:go_router/go_router.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import '../../../../core/constants/app_constants.dart';
 import '../../../../models/space.dart';
 import '../../../../services/auth.dart';
 import '../../../../services/room_db.dart';
@@ -49,8 +48,10 @@ void linkAlertDialogue(
             onPressed: () async {
               context.pop();
               await launchUrl(link, mode: LaunchMode.inAppWebView).catchError(
-                (value) =>
-                    showSnackBar(context, msg: 'Unable to open this link'),
+                (value) {
+                  showSnackBar(context, msg: 'Unable to open this link');
+                  return false;
+                },
               );
             },
             label: 'Open',

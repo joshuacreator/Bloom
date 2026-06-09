@@ -8,7 +8,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:image_picker/image_picker.dart';
 
-import '../../../../core/constants/app_constants.dart';
 import '../../../../core/theme/app_text_styles.dart';
 import '../../../../providers/auth_provider.dart';
 import '../../../../providers/firestore_provider.dart';
@@ -19,9 +18,6 @@ import '../../../../views/dialogues/bottom_sheets.dart';
 import '../../../../common/widgets/loading_indicator.dart';
 import '../../../../common/widgets/snack_bar.dart';
 import '../../../../common/widgets/app_circle_avatar.dart';
-import '../../../../common/widgets/app_text_field.dart';
-import '../../../../common/widgets/app_button.dart';
-import '../../../../core/theme/app_text_styles.dart';
 import '../widgets/info_edit_dialogue.dart';
 
 class ProfileScreen extends ConsumerStatefulWidget {

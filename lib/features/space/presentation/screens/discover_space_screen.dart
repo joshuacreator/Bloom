@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../domain/entities/space_entity.dart';
 import '../notifiers/space_notifier.dart';
 import '../providers/space_providers.dart';
 import '../../../../providers/auth_provider.dart';
@@ -13,7 +12,6 @@ import '../../../../common/widgets/snack_bar.dart';
 import '../../../../views/screens/search_screen.dart';
 import '../../../../views/screens/space/space_info_screen.dart' as old;
 import '../../../../views/screens/room/room_chats_screen.dart';
-import '../../../../core/theme/app_colors.dart';
 import '../../../../core/utils/connection_state.dart';
 
 class DiscoverSpacesScreen extends ConsumerWidget {

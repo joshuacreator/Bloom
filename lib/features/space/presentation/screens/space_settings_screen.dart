@@ -8,7 +8,6 @@ import 'package:image_picker/image_picker.dart';
 
 import '../../domain/entities/space_entity.dart';
 import '../notifiers/space_notifier.dart';
-import '../providers/space_providers.dart';
 import '../../../../common/widgets/app_text_field.dart';
 import '../../../../common/widgets/app_text_buttons.dart';
 import '../../../../views/dialogues/bottom_sheets.dart';

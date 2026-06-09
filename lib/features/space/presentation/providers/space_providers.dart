@@ -1,7 +1,6 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../domain/entities/space_entity.dart';
-import '../../domain/usecases/observe_spaces_use_case.dart';
 import '../notifiers/space_notifier.dart';
 
 final allSpacesProvider = StreamProvider<List<SpaceEntity>>((ref) {

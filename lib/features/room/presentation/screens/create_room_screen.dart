@@ -7,7 +7,6 @@ import 'package:image_picker/image_picker.dart';
 import '../../../../common/widgets/app_button.dart';
 import '../../../../common/widgets/app_text_field.dart';
 import '../../../../common/widgets/privacy_tile.dart';
-import '../../../../common/widgets/loading_indicator.dart';
 import '../../../../common/widgets/snack_bar.dart';
 import '../../../../core/constants/app_constants.dart';
 import '../../../../core/utils/extensions.dart';
