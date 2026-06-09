@@ -1,24 +1,34 @@
-import 'package:basic_board/configs/sizes.dart';
-import 'package:basic_board/utils/routes.dart';
-import 'package:basic_board/utils/themes.dart';
-// import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:basic_board/config/firebase_providers.dart';
+import 'package:basic_board/config/router/app_router.dart';
+import 'package:basic_board/core/theme/app_theme.dart';
+import 'package:basic_board/core/theme/theme_provider.dart';
+import 'package:basic_board/core/utils/app_logger.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'firebase_options.dart';
-import 'providers/theme_provider.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
+  FlutterError.onError = (details) {
+    logger.e(
+      'Flutter error',
+      error: details.exception,
+      stackTrace: details.stack,
+    );
+  };
+
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+
+  final prefs = await SharedPreferences.getInstance();
+
   runApp(
     ProviderScope(
       overrides: [
-        sharedPreferencesProvider.overrideWithValue(
-          await SharedPreferences.getInstance(),
-        ),
+        sharedPreferencesProvider.overrideWithValue(prefs),
       ],
       child: const MyApp(),
     ),
@@ -30,10 +40,9 @@ class MyApp extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    Sizes().init(context);
     return MaterialApp.router(
-      title: "Joshua's Chat app",
-      themeMode: ref.watch(themeSelectorProvider),
+      title: 'Bloom',
+      themeMode: ref.watch(themeModeNotifierProvider),
       darkTheme: AppTheme.darkTheme,
       theme: AppTheme.lightTheme,
       routerConfig: goRouter,
